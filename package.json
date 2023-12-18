@@ -1,0 +1,43 @@
+{
+  "name": "ext-comm",
+  "module": "src/index.ts",
+  "type": "module",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bun-types": "latest",
+    "tsup": "^8.0.1"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify --clean"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.254"
+  },
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      "./package.json": "./package.json",
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      }
+    },
+    "types": "./dist/index.d.ts"
+  }
+}
