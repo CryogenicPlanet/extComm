@@ -116,7 +116,7 @@ You can use `sendMsg`, `sendMsgs` and `sendMsgCallback` to send messages.
 
 import { extComm } from './comm';
 
-// send msg to `content` from `background`
+// send msg to `background` from `content`
 const session = await extComm.sendMsg("background", "getSession", []);
 ```
 ****
@@ -125,5 +125,6 @@ const session = await extComm.sendMsg("background", "getSession", []);
 
 import { extComm } from './comm';
 
+// send msg to `content`
 await extComm.sendMsgToActiveTab("startRecording", [])
 ```
